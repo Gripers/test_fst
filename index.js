@@ -1,3 +1,5 @@
+require("dotenv").config();
+
 const cors = require("express");
 const express = require("express");
 
@@ -21,6 +23,4 @@ app.get("/users", (req, res) => {
   res.status(200).json(users);
 });
 
-const port = 8080;
-
-app.listen(port, () => console.log(port));
+app.listen(process.env.PORT, () => console.log(process.env.PORT));
